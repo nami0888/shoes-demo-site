@@ -1,2 +1,18 @@
- 5
- 
+@charset "UTF-8";
+
+html{
+    font-size: 62.5%;
+}
+img{
+    max-width: 100%;
+}
+body{
+    font-family: "游ゴシック体", "YuGothic";
+}
+
+/* 
+====================================================*/
+header{
+    border: 1px solid #f33;
+    display: flex;
+}
