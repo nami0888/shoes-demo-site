@@ -1,18 +1,203 @@
-@charset "UTF-8";
+@charset "utf-8";
 
-html{
+html {
     font-size: 62.5%;
 }
-img{
+
+img {
     max-width: 100%;
-}
-body{
-    font-family: "游ゴシック体", "YuGothic";
+    vertical-align: bottom;
 }
 
-/* 
-====================================================*/
-header{
-    border: 1px solid #f33;
+body {
+    color: #121212;
+
+}
+
+h2 {
+    text-align: center;
+}
+
+/*=========== 
+ヘッダー
+ ===========*/
+header {
     display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 20px 40px;
+    position: fixed;
+    z-index: 10;
+    background-color: #fff;
+}
+
+header h1 {
+    height: 40px;
+}
+
+
+/*=========== 
+nav
+ ===========*/
+
+/*開いた時の設定*/
+
+#navi {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -300px;
+    bottom: 0;
+    width: 300px;
+    color: #fff;
+    padding: 60px 25px;
+    background-color: #121212;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    transition: all .5s;
+    z-index: 20;
+    opacity: 0;
+}
+
+.open #navi {
+    left: 0;
+    opacity: 1;
+}
+
+#navi a {
+    color: #fff;
+}
+
+#navi ul {
+    margin: 0;
+    padding: 0;
+}
+
+#navi ul.nav-menu {
+    margin-bottom: 60px;
+    border-top: solid 1px #fff;
+}
+
+#navi ul.nav-menu li {
+    position: relative;
+    margin: 0;
+    padding: 20px 0;
+    border-bottom: solid 1px #fff;
+}
+
+#navi ul.nav-sns li {
+    padding: 5px 0;
+}
+
+/* ハンバーガーボタン*/
+
+.toggle_btn {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    transform: all 0.5s;
+    z-index: 20;
+}
+
+/**ボタン内側**/
+.toggle_btn span {
+    width: 25px;
+    height: 2px;
+    position: absolute;
+    background-color: #333;
+    /*図形だから ackground-color*/
+    position: absolute;
+    transition: all .5s;
+}
+
+.toggle_btn span:nth-child(1) {
+    top: 4px;
+}
+
+.toggle_btn span:nth-child(2) {
+    top: 14px;
+}
+
+.toggle_btn span:nth-child(3) {
+    bottom: 4px;
+}
+
+/*閉じているとき */
+/*ボタンあけてるとき*/
+.open .toggle_btn span {
+    background-color: #fff;
+}
+
+/* 線の色変えている */
+.open .toggle_btn span:nth-child(1) {
+    transform: translateY(10px) rotate(-315deg);
+}
+
+.open .toggle_btn span:nth-child(2) {
+    opacity: 0;
+}
+
+.open .toggle_btn span:nth-child(3) {
+    transform: translateY(-10px) rotate(315deg);
+}
+
+#mask {
+    display: none;
+    ransition: all .5s;
+}
+
+.open #mask {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .8;
+    z-index: 10;
+    cursor: pointer;
+}
+
+
+/*=========== 
+video
+ ===========*/
+#bg-video {
+    width: 100%;
+}
+
+/*=========== 
+pickup
+ ===========*/
+#pickup {
+    width: 100%;
+    padding: 100px 0 50px 0;
+}
+
+#pickup .slick-area li {
+    padding: 0 30px;
+}
+
+/*=========== 
+Feature
+ ===========*/
+#feature .grid {
+    display: grid;
+    gap: 26px;
+    /*グリッド線を隔てる溝の幅*/
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /*grid-template-columns垂直方向に/repeat繰り返して/auto-fitウィンドウ幅に合うように要素の大きさが変化する/minmax(300px, 1fr))最小が300px; */
+}
+
+
+
+
+/*=========== 
+Contact
+ ===========*/
+#contact {
+    background-color: black;
+    color: #fff;
 }
